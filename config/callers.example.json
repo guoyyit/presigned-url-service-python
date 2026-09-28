@@ -1,0 +1,17 @@
+{
+  "token-team-a": {
+    "caller_id": "team-a",
+    "path_prefixes": ["/data/a/"],
+    "operations": ["read"]
+  },
+  "token-team-b": {
+    "caller_id": "team-b",
+    "path_prefixes": ["/data/b/"],
+    "operations": ["read", "write"]
+  },
+  "token-admin": {
+    "caller_id": "admin",
+    "path_prefixes": ["/"],
+    "operations": ["read", "write", "delete"]
+  }
+}

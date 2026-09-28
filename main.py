@@ -1,8 +1,11 @@
-from fastapi import FastAPI
+"""Application entry point: ``uvicorn main:app`` / ``fastapi dev main.py``."""
 
-app = FastAPI()
+from __future__ import annotations
 
+from presigned.api import create_app
+from presigned.config import load_settings
+from presigned.service import build_service
 
-@app.get("/")
-def read_root():
-    return {"Hello": "World"}
+settings = load_settings()
+service = build_service(settings)
+app = create_app(service)
